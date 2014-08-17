@@ -2355,11 +2355,11 @@ MicroSD socket.</description>
 <part name="U$8" library="mami_pero" deviceset="OMRON_B3U_1000P" device=""/>
 <part name="LED3" library="mami_pero" deviceset="1608(LED)" device="" value="LED3"/>
 <part name="LED4" library="mami_pero" deviceset="1608(LED)" device=""/>
-<part name="U$34" library="mami_pero" deviceset="1005(RES)" device=""/>
-<part name="U$35" library="mami_pero" deviceset="1005(RES)" device=""/>
+<part name="R13" library="mami_pero" deviceset="1005(RES)" device=""/>
+<part name="R14" library="mami_pero" deviceset="1005(RES)" device=""/>
 <part name="U$11" library="supply1" deviceset="+3V" device=""/>
 <part name="U$13" library="supply1" deviceset="+3V" device=""/>
-<part name="U$15" library="mami_pero" deviceset="1005(RES)" device="" value="330k"/>
+<part name="R12" library="mami_pero" deviceset="1005(RES)" device="" value="330k"/>
 <part name="C23" library="additional" deviceset="C" device="1005" value="2.2u"/>
 <part name="C21" library="additional" deviceset="C" device="1005" value="2.2u"/>
 <part name="C22" library="additional" deviceset="C" device="1005" value="0.1u"/>
@@ -2464,11 +2464,11 @@ STM32F405RG</text>
 <instance part="U$8" gate="G$1" x="-88.9" y="-139.7"/>
 <instance part="LED3" gate="G$1" x="-40.64" y="20.32" rot="R270"/>
 <instance part="LED4" gate="G$1" x="-33.02" y="17.78" rot="R270"/>
-<instance part="U$34" gate="G$1" x="-40.64" y="-5.08" rot="R90"/>
-<instance part="U$35" gate="G$1" x="-33.02" y="-5.08" rot="R90"/>
+<instance part="R13" gate="G$1" x="-40.64" y="-5.08" rot="R90"/>
+<instance part="R14" gate="G$1" x="-33.02" y="-5.08" rot="R90"/>
 <instance part="U$11" gate="G$1" x="-111.76" y="0"/>
 <instance part="U$13" gate="G$1" x="-71.12" y="-114.3"/>
-<instance part="U$15" gate="G$1" x="-71.12" y="-132.08" rot="R90"/>
+<instance part="R12" gate="G$1" x="-71.12" y="-132.08" rot="R90"/>
 <instance part="C23" gate="G$1" x="-2.54" y="-45.72" rot="R180"/>
 <instance part="C21" gate="G$1" x="-76.2" y="-17.78" rot="R270"/>
 <instance part="C22" gate="G$1" x="5.08" y="-121.92" rot="R270"/>
@@ -2713,8 +2713,8 @@ STM32F405RG</text>
 <wire x1="-33.02" y1="-7.62" x2="-33.02" y2="-17.78" width="0.1524" layer="91"/>
 <junction x="-40.64" y="-17.78"/>
 <junction x="-33.02" y="-17.78"/>
-<pinref part="U$34" gate="G$1" pin="1"/>
-<pinref part="U$35" gate="G$1" pin="1"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="R14" gate="G$1" pin="1"/>
 <pinref part="C23" gate="G$1" pin="1"/>
 <pinref part="C21" gate="G$1" pin="1"/>
 </segment>
@@ -3220,7 +3220,7 @@ STM32F405RG</text>
 <segment>
 <wire x1="-71.12" y1="-116.84" x2="-71.12" y2="-121.92" width="0.1524" layer="91"/>
 <pinref part="U$13" gate="G$1" pin="+3V"/>
-<pinref part="U$15" gate="G$1" pin="2"/>
+<pinref part="R12" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="AGND" class="0">
@@ -3512,20 +3512,20 @@ STM32F405RG</text>
 <pinref part="U$8" gate="G$1" pin="P$2"/>
 <wire x1="-81.026" y1="-139.7" x2="-71.12" y2="-139.7" width="0.1524" layer="91"/>
 <junction x="-81.026" y="-139.7"/>
-<pinref part="U$15" gate="G$1" pin="1"/>
+<pinref part="R12" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="LED3" gate="G$1" pin="P$2"/>
-<pinref part="U$34" gate="G$1" pin="2"/>
+<pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="-40.64" y1="10.16" x2="-40.64" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="LED4" gate="G$1" pin="P$2"/>
-<pinref part="U$35" gate="G$1" pin="2"/>
+<pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="-33.02" y1="7.62" x2="-33.02" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
