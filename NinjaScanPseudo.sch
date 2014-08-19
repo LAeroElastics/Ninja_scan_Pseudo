@@ -2020,6 +2020,12 @@ MicroSD socket.</description>
 <wire x1="1.85" y1="-0.65" x2="1.85" y2="0.65" width="0.127" layer="21"/>
 <text x="-0.5" y="0.85" size="0.8128" layer="21" font="vector" ratio="15">&gt;Name</text>
 </package>
+<package name="FA128">
+<smd name="1" x="-0.1" y="-0.1" dx="1" dy="1" layer="1"/>
+<smd name="4" x="-0.1" y="1.3" dx="1" dy="1" layer="1"/>
+<smd name="3" x="1.4" y="1.3" dx="1" dy="1" layer="1"/>
+<smd name="2" x="1.4" y="-0.1" dx="1" dy="1" layer="1"/>
+</package>
 </packages>
 <symbols>
 <symbol name="STM32F405_64">
@@ -2135,6 +2141,22 @@ MicroSD socket.</description>
 <pin name="2" x="10.16" y="0" visible="off" length="short" rot="R180"/>
 <text x="0" y="1.524" size="1.6764" layer="95">&gt;Name</text>
 <text x="0" y="-3.302" size="1.6764" layer="96">&gt;Value</text>
+</symbol>
+<symbol name="CRYSTAL">
+<pin name="P$1" x="-5.08" y="0" visible="off" length="middle"/>
+<pin name="P$2" x="10.16" y="0" visible="off" length="middle" rot="R180"/>
+<wire x1="0.508" y1="2.286" x2="0.508" y2="0" width="0.254" layer="94"/>
+<wire x1="0.508" y1="0" x2="0.508" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="4.572" y1="2.286" x2="4.572" y2="0" width="0.254" layer="94"/>
+<wire x1="4.572" y1="0" x2="4.572" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.286" x2="1.27" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.286" x2="3.81" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-2.286" x2="3.81" y2="2.286" width="0.254" layer="94"/>
+<wire x1="3.81" y1="2.286" x2="1.27" y2="2.286" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0.508" y2="0" width="0.254" layer="94"/>
+<wire x1="4.572" y1="0" x2="5.08" y2="0" width="0.254" layer="94"/>
+<text x="-0.254" y="3.302" size="1.27" layer="95">&gt;Name</text>
+<text x="-0.254" y="-4.318" size="1.27" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -2264,6 +2286,22 @@ MicroSD socket.</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FA128">
+<gates>
+<gate name="G$1" symbol="CRYSTAL" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="FA128">
+<connects>
+<connect gate="G$1" pin="P$1" pad="1"/>
+<connect gate="G$1" pin="P$2" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -2368,6 +2406,10 @@ MicroSD socket.</description>
 <part name="C18" library="additional" deviceset="C" device="1005" value="0.1u"/>
 <part name="C19" library="additional" deviceset="C" device="1005" value="0.1u"/>
 <part name="C24" library="additional" deviceset="C" device="1005" value="0.1u"/>
+<part name="U$15" library="mami_pero" deviceset="FA128" device=""/>
+<part name="C25" library="additional" deviceset="C" device="1005" value="12pF"/>
+<part name="C26" library="additional" deviceset="C" device="1005" value="12pF"/>
+<part name="GND11" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2384,6 +2426,8 @@ MicroSD socket.</description>
 <text x="-55.88" y="142.24" size="1.778" layer="250" rot="R180">H11634CT-ND</text>
 <text x="-104.14" y="-7.62" size="2.1844" layer="95" font="vector" ratio="15">IC2
 STM32F405RG</text>
+<text x="7.62" y="-177.8" size="1.778" layer="250">Q22FA1280012000</text>
+<text x="33.02" y="-182.88" size="1.778" layer="250">GRM1555C1H120FA01D</text>
 </plain>
 <instances>
 <instance part="U3" gate="G$1" x="-53.34" y="88.9"/>
@@ -2460,15 +2504,15 @@ STM32F405RG</text>
 <instance part="U$6" gate="G$1" x="-58.42" y="-60.96"/>
 <instance part="GND2" gate="1" x="-15.24" y="-121.92"/>
 <instance part="GND16" gate="1" x="35.56" y="-137.16"/>
-<instance part="GND9" gate="1" x="-96.52" y="-147.32"/>
-<instance part="U$8" gate="G$1" x="-88.9" y="-139.7"/>
+<instance part="GND9" gate="1" x="-104.14" y="-149.86"/>
+<instance part="U$8" gate="G$1" x="-96.52" y="-142.24"/>
 <instance part="LED3" gate="G$1" x="-40.64" y="20.32" rot="R270"/>
 <instance part="LED4" gate="G$1" x="-33.02" y="17.78" rot="R270"/>
 <instance part="R13" gate="G$1" x="-40.64" y="-5.08" rot="R90"/>
 <instance part="R14" gate="G$1" x="-33.02" y="-5.08" rot="R90"/>
 <instance part="U$11" gate="G$1" x="-111.76" y="0"/>
-<instance part="U$13" gate="G$1" x="-71.12" y="-114.3"/>
-<instance part="R12" gate="G$1" x="-71.12" y="-132.08" rot="R90"/>
+<instance part="U$13" gate="G$1" x="-83.82" y="-116.84"/>
+<instance part="R12" gate="G$1" x="-83.82" y="-134.62" rot="R90"/>
 <instance part="C23" gate="G$1" x="-2.54" y="-45.72" rot="R180"/>
 <instance part="C21" gate="G$1" x="-76.2" y="-17.78" rot="R270"/>
 <instance part="C22" gate="G$1" x="5.08" y="-121.92" rot="R270"/>
@@ -2477,6 +2521,10 @@ STM32F405RG</text>
 <instance part="C18" gate="G$1" x="35.56" y="-121.92" rot="R270"/>
 <instance part="C19" gate="G$1" x="45.72" y="-121.92" rot="R270"/>
 <instance part="C24" gate="G$1" x="55.88" y="-121.92" rot="R270"/>
+<instance part="U$15" gate="G$1" x="15.24" y="-170.18"/>
+<instance part="C25" gate="G$1" x="7.62" y="-180.34" rot="R90"/>
+<instance part="C26" gate="G$1" x="27.94" y="-180.34" rot="R90"/>
+<instance part="GND11" gate="1" x="17.78" y="-198.12"/>
 </instances>
 <busses>
 </busses>
@@ -2745,9 +2793,20 @@ STM32F405RG</text>
 </segment>
 <segment>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="-96.52" y1="-139.7" x2="-96.52" y2="-144.78" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-142.24" x2="-104.14" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="U$8" gate="G$1" pin="P$1"/>
-<wire x1="-96.52" y1="-139.7" x2="-91.44" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-142.24" x2="-99.06" y2="-142.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C25" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="-185.42" x2="7.62" y2="-193.04" width="0.1524" layer="91"/>
+<pinref part="C26" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="-193.04" x2="17.78" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-193.04" x2="27.94" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-193.04" x2="27.94" y2="-185.42" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="17.78" y1="-195.58" x2="17.78" y2="-193.04" width="0.1524" layer="91"/>
+<junction x="17.78" y="-193.04"/>
 </segment>
 </net>
 <net name="USB_VBUS" class="0">
@@ -3218,7 +3277,7 @@ STM32F405RG</text>
 <pinref part="C24" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<wire x1="-71.12" y1="-116.84" x2="-71.12" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="-119.38" x2="-83.82" y2="-124.46" width="0.1524" layer="91"/>
 <pinref part="U$13" gate="G$1" pin="+3V"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 </segment>
@@ -3504,14 +3563,12 @@ STM32F405RG</text>
 <net name="N$21" class="0">
 <segment>
 <pinref part="U$6" gate="G$1" pin="NRST"/>
-<wire x1="-63.5" y1="-96.52" x2="-63.5" y2="-139.7" width="0.1524" layer="91"/>
-<wire x1="-63.5" y1="-139.7" x2="-71.12" y2="-139.7" width="0.1524" layer="91"/>
-<wire x1="-71.12" y1="-134.62" x2="-71.12" y2="-139.7" width="0.1524" layer="91"/>
-<wire x1="-81.28" y1="-139.7" x2="-81.026" y2="-139.7" width="0.1524" layer="91"/>
-<junction x="-71.12" y="-139.7"/>
+<wire x1="-63.5" y1="-96.52" x2="-63.5" y2="-142.24" width="0.1524" layer="91"/>
+<wire x1="-63.5" y1="-142.24" x2="-83.82" y2="-142.24" width="0.1524" layer="91"/>
+<wire x1="-83.82" y1="-137.16" x2="-83.82" y2="-142.24" width="0.1524" layer="91"/>
+<junction x="-83.82" y="-142.24"/>
 <pinref part="U$8" gate="G$1" pin="P$2"/>
-<wire x1="-81.026" y1="-139.7" x2="-71.12" y2="-139.7" width="0.1524" layer="91"/>
-<junction x="-81.026" y="-139.7"/>
+<wire x1="-88.646" y1="-142.24" x2="-83.82" y2="-142.24" width="0.1524" layer="91"/>
 <pinref part="R12" gate="G$1" pin="1"/>
 </segment>
 </net>
@@ -3575,6 +3632,36 @@ STM32F405RG</text>
 <pinref part="U$6" gate="G$1" pin="PC13"/>
 <wire x1="-76.2" y1="-96.52" x2="-76.2" y2="-124.46" width="0.1524" layer="91"/>
 <label x="-76.2" y="-124.46" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="XTAL_IN" class="0">
+<segment>
+<pinref part="U$6" gate="G$1" pin="PH0"/>
+<wire x1="-68.58" y1="-96.52" x2="-68.58" y2="-124.46" width="0.1524" layer="91"/>
+<label x="-68.58" y="-124.46" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U$15" gate="G$1" pin="P$1"/>
+<pinref part="C25" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="-170.18" x2="7.62" y2="-170.18" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-170.18" x2="7.62" y2="-177.8" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-170.18" x2="7.62" y2="-154.94" width="0.1524" layer="91"/>
+<label x="7.62" y="-165.1" size="1.778" layer="95" rot="R90"/>
+</segment>
+</net>
+<net name="XTAL_OUT" class="0">
+<segment>
+<pinref part="U$6" gate="G$1" pin="PH1"/>
+<wire x1="-66.04" y1="-96.52" x2="-66.04" y2="-124.46" width="0.1524" layer="91"/>
+<label x="-66.04" y="-124.46" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U$15" gate="G$1" pin="P$2"/>
+<pinref part="C26" gate="G$1" pin="2"/>
+<wire x1="25.4" y1="-170.18" x2="27.94" y2="-170.18" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-170.18" x2="27.94" y2="-177.8" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-170.18" x2="27.94" y2="-154.94" width="0.1524" layer="91"/>
+<label x="27.94" y="-167.64" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
